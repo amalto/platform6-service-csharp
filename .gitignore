@@ -1,4 +1,6 @@
 .DS_Store
 .idea/
-Platform6/Properties/
+obj/
+bin/
 Platform6/packages/
+Platform6/Properties/
