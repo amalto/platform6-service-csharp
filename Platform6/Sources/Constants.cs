@@ -1,4 +1,4 @@
-﻿namespace Service {
+﻿namespace Service.Sources {
 	public class Constants {
 		public const string MyServiceId = "demo.csharp";
 		public const string ServerVersion = "0.0.1";

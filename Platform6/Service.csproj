@@ -67,6 +67,17 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\build\ServiceConfiguration.bundle.js" />
+    <Content Include="Client\package-lock.json" />
+    <Content Include="Client\package.json" />
+    <Content Include="Client\Sources\ServiceConfiguration.tsx" />
+    <Content Include="Client\tsconfig.json" />
+    <Content Include="Client\webpack.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\node_modules\.bin" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.

@@ -2,5 +2,8 @@
 .idea/
 obj/
 bin/
+build/
+node_modules/
 Platform6/packages/
 Platform6/Properties/
+

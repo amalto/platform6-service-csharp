@@ -5,7 +5,7 @@ using Mono.Unix;
 using Mono.Unix.Native;
 using Nancy.Hosting.Self;
 
-namespace Service {
+namespace Service.Sources {
 	internal class Application {
 		private const string MyServiceId = "demo.csharp";
 		private static Library.Service _service;

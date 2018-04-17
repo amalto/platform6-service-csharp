@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Nancy;
 
-namespace Service {
+namespace Service.Sources {
 	public class Resource : NancyModule {
 		public Resource() : base(Constants.Path) {
 			After.AddItemToEndOfPipeline(ctx => ctx.Response
@@ -12,15 +12,13 @@ namespace Service {
 
 			Get["/portal"] = _ => {
 				// Return the UI's script
-				var jsonBytes = Encoding.UTF8.GetBytes("Hello!");
+				var jsonBytes = Encoding.UTF8.GetBytes(System.IO.File.ReadAllText(@"../../Client/build/ServiceConfiguration.bundle.js"));
 
-				var response = new Response {
+				return new Response {
 					StatusCode = HttpStatusCode.OK,
-					ContentType = "application/json",
+					ContentType = "text/plain",
 					Contents = c => c.Write(jsonBytes, 0, jsonBytes.Length)
 				};
-
-				return response;
 			};
 
 			Options["/portal"] = _ => new Response {StatusCode = HttpStatusCode.OK};
