@@ -39,7 +39,8 @@
       <HintPath>packages\Hazelcast.Net.3.9.3\lib\net40\Hazelcast.Net.dll</HintPath>
     </Reference>
     <Reference Include="Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\Platform6.Client.0.0.1-alpha4\lib\net47\Library.dll</HintPath>
+      <HintPath>packages\Platform6.Client.0.0.1-alpha6\lib\net47\Library.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Posix, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
       <HintPath>packages\Mono.Posix-4.5.4.5.0\lib\net45\Mono.Posix.dll</HintPath>
@@ -54,9 +55,19 @@
       <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=4.1.0.172, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b">
+      <HintPath>packages\Topshelf.4.1.0\lib\net452\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Topshelf.Linux, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\Topshelf.Linux.1.0.16.15\lib\Topshelf.Linux.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Library.Models;
-using Mono.Unix;
-using Mono.Unix.Native;
 using Nancy.Hosting.Self;
+using Topshelf;
 
 namespace Service.Sources {
 	internal class Application {
@@ -12,32 +11,40 @@ namespace Service.Sources {
 
 		public static void Main() {
 			// Start the Nancy server
-			var host = new NancyHost(new Uri("http://localhost:8888"));
-			host.Start();
+			HostFactory.Run(x =>
+			{
+				x.UseLinuxIfAvailable();
+				x.Service<NancyHost>(s =>
+				{
+					s.ConstructUsing(name => new NancyHost(new Uri("http://localhost:8888")));
+					s.WhenStarted(tc => {
+						_service = DeployService();
+						_service.Deployed.ContinueWith(Console.WriteLine);
 
-			if (Type.GetType("Mono.Runtime") != null) {
-				// Deploy my service
-				_service = DeployService();
-				_service.Deployed.ContinueWith(Console.WriteLine);
+						Console.WriteLine("The service " + MyServiceId + " has been deployed.");
 
-				UnixSignal.WaitAny(GetUnixTerminationSignals());
-			}
-			else Console.ReadLine();
-		}
+						tc.Start();
+					});
+					s.WhenStopped(async tc => {
+						Console.WriteLine("Closing the server...");
 
-		private static UnixSignal[] GetUnixTerminationSignals() {
-			return new[] {
-				new UnixSignal(Signum.SIGINT),
-				new UnixSignal(Signum.SIGTERM),
-				new UnixSignal(Signum.SIGQUIT),
-				new UnixSignal(Signum.SIGHUP)
-			};
+						await _service.UndeployService();
+						Console.WriteLine("Server closed and service undeployed.");
+
+						tc.Stop();
+					});
+				});
+
+				x.RunAsLocalSystem();
+				x.SetDescription("Nancy-SelfHost example");
+				x.SetDisplayName("Nancy-SelfHost Service");
+				x.SetServiceName("Nancy-SelfHost");
+			});
 		}
 
 		private static Library.Service DeployService() {
 			var parameters = new DeployParameters {
 				Id = MyServiceId,
-				Username = "admin@amalto.com",
 				Path = Constants.Path,
 				BasePath = Environment.GetEnvironmentVariable("EXTERNAL_URL"),
 				Versions = new Versions {
