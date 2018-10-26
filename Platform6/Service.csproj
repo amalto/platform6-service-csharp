@@ -39,7 +39,7 @@
       <HintPath>packages\Hazelcast.Net.3.9.3\lib\net40\Hazelcast.Net.dll</HintPath>
     </Reference>
     <Reference Include="Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\Platform6.Client.0.0.1-alpha6\lib\net47\Library.dll</HintPath>
+      <HintPath>packages\Platform6.Connector.0.0.1-alpha8\lib\net47\Library.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Posix, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
