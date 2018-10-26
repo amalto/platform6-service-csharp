@@ -1,11 +1,11 @@
 # Platform 6 C# Service Demo
 
-> A demo service to show how to develop a __Platform 6__ service with [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) using [Platform 6 C# client](https://github.com/amalto/platform6-client-csharp).
+> A demo service to show how to develop a __Platform 6__ service with [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) using [Platform 6 C# connector][platform6-connector-csharp].
 
 ## Prerequisite
 
 - Launch a local instance of [Platform 6](https://documentation.amalto.com/platform6/master/).
-- Read and fulfill the requirements of [Platform 6 C# client][platform6-csharp-client].
+- Read and fulfill the requirements of [Platform 6 C# connector][platform6-connector-csharp].
 
 ## What is this demo about?
 
@@ -37,7 +37,7 @@ This script will be injected and displayed on the _Portal_.
 To help you build the user interface of your custom service, a set of components is ready for use on Platform 6.
 They can be included as a JavaScript dependency from the library [`platform6-ui-components`](https://github.com/amalto/platform6-ui-components).
 
-The documentation of these components is available [online](https://documentation.amalto.com/platform6/master/developer-guide/platform6-ui-components/docs/).
+The documentation of these components is available [online](https://documentation.amalto.com/platform6/master/develop-app/custom-service/platform6-ui-components/docs/).
 
 ## How to run the demo?
 
@@ -108,7 +108,7 @@ Here is an example of the output:
 
 The _Portal_ will use this response to display the user interface of the service.
 
-[platform6-csharp-client]: https://github.com/amalto/platform6-client-csharp
+[platform6-connector-csharp]: https://github.com/amalto/platform6-connector-csharp
 [Platform 6 Portal]: http://localhost:8480/
 
 ## License
