@@ -10,7 +10,7 @@
     "dependencies": {
         "@amalto/platform6-ui": "^1.11.0",
         "cross-env": "^5.1.3",
-        "react": "15.4.2"
+        "react": "15.7.0"
     },
     "devDependencies": {
         "@types/ace": "0.0.32",
