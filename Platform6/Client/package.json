@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@amalto/platform6-ui": "^1.11.0",
-        "cross-env": "^5.1.3",
+        "cross-env": "^5.2.1",
         "react": "15.4.2"
     },
     "devDependencies": {
